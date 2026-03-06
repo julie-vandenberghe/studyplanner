@@ -1,6 +1,6 @@
-package com.studyplanner.studyplanner.repository;
+package com.studyplanner.repository;
 
-import com.studyplanner.studyplanner.entity.StudySession;
+import com.studyplanner.entity.StudySession;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 

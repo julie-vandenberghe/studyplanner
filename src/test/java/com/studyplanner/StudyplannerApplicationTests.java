@@ -1,4 +1,4 @@
-package com.studyplanner.studyplanner;
+package com.studyplanner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

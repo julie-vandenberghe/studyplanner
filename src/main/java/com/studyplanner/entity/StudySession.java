@@ -1,4 +1,4 @@
-package com.studyplanner.studyplanner.entity;
+package com.studyplanner.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
