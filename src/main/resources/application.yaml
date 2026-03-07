@@ -1,3 +1,33 @@
 spring:
   application:
     name: studyplanner
+
+  # config bdd H2 en mémoire
+  datasource:
+    url: jdbc:h2:mem:studyplannerdb # mem = en mémoire
+    driver-class-name: org.h2.Driver
+    username: sa # sa = user par défaut de H2 (correspond à system administrator)
+    password: # vide par défaut pour H2
+
+  # activation console H2
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # config JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop # créé automatiquement la table au démarrage depuis l'entité, et la supprime à l'arrêt
+    show-sql: true # permet d'afficher les requêtes SQL dans la console
+
+# config Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info # expose uniquement ces endpoints
+  endpoint:
+    health:
+      show-details: always
