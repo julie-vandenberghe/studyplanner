@@ -20,9 +20,11 @@ public class StudySessionController {
         this.studySessionService = studySessionService;
     }
 
+    
     @PostMapping
-    public ResponseEntity<StudySession> createStudySession(@Valid @RequestBody StudySession session, Principal principal) {
-        StudySession createdSession = studySessionService.createStudySession(session, principal.getName());
+    public ResponseEntity<StudySession> createStudySession(@Valid @RequestBody StudySessionDTO session, Principal principal) {
+        StudySession studySession = new StudySession(session.getEndTime(),session.getStartTime(), session.getDescription(), session.getSubject(), session.getStudentName());
+        StudySession createdSession = studySessionService.createStudySession(studySession, principal.getName());
         return ResponseEntity.status(HttpStatus.CREATED).body(createdSession);
     }
 
