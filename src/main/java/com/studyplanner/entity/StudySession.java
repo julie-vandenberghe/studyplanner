@@ -24,7 +24,6 @@ public class StudySession {
     @Column(nullable = false)
     @NotBlank(message = "Le nom de l'étudiant est obligatoire")
     private String studentName;
-
     @Column(nullable = false)
     @NotBlank(message = "Le sujet est obligatoire")
     private String subject;
@@ -45,6 +44,14 @@ public class StudySession {
 
     private LocalDateTime updatedAt;
 
+    public StudySession(LocalDateTime endTime, LocalDateTime startTime, String description, String subject, String studentName) {
+        this.endTime = endTime;
+        this.startTime = startTime;
+        this.description = description;
+        this.subject = subject;
+        this.studentName = studentName;
+    }
+
     // Gestion des timestamps
     @PrePersist
     protected void onCreate() {
@@ -56,5 +63,7 @@ public class StudySession {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
+
 
 }
