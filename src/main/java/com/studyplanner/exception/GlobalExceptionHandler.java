@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BusinessException.class)
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_CONTENT)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public ErrorResponse handleBusinessException(BusinessException exception) {
         return new ErrorResponse(
                 "UNPROCESSABLE_ENTITY",
