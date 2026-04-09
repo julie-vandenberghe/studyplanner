@@ -8,7 +8,7 @@ API Spring Boot pour gérer des sessions de révision, avec sécurité Basic Aut
 - Maven (ou wrapper Maven inclus)
 
 ## Lancer l'application
-²²²²                                                            
+                                                           
 ```bash
 ./mvnw spring-boot:run
 ```
